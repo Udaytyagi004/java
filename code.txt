@@ -1,0 +1,53 @@
+class Main {
+    public static void main(String[] args) {
+        int ans  = rev_num(456);
+        int a = counting(98 , 0);
+        boolean b = is_palin("abcfa");
+        System.out.println(b);
+        System.out.println(ans);
+    }
+
+    #### sum of the digits of a number using recursion ####
+    public static int sum(int n){
+        if(n == 0) return 0;
+         return n%10 + sum(n/10);
+    }
+
+    ####   Reverse of a number using recursion ####
+    public static int rev_num(int n){
+        if(n == 0) return 0;
+        
+        return (n%10)* (int)(Math.pow(10 , (int)Math.log10(n))) + rev_num(n/10);
+    }
+
+    ####  counting the number of zeros in a number #####
+    public static int counting(int num , int count){
+        if(num == 0) return count;
+        if(num % 10 == 0) count++ ;
+        return counting(num/10 , count);
+    }
+
+
+
+    ##### Checking whether a string is palindrome or not using helper function   #####
+    public static boolean is_palin(String str){
+        return helper(str , 0 , str.length()-1);
+    }
+    public static boolean helper(String str , int i , int j){
+        if(i  == j) return true;
+        if(str.charAt(i) == str.charAt(j)) return helper(str , ++i , --j);
+        return false;
+    }
+
+
+
+
+
+    ##### Checking whether the array is sorted or not  #####
+
+    public static boolean is_sorted(int[] arr , int i){
+        if(i == arr.length - 1) return true;
+        if(arr[i] < arr[i + 1]) return is_sorted(arr , i+1);
+        return false;
+    }
+}

@@ -15,8 +15,8 @@ public class No_of_Zero {
     //otherwise we can pass count itself as an argument to the function ,(then simply call this helper function directely in main with two arguments n and count . initially the count is 0)
     public static int helper(int n, int c){
         if(n == 0) return c;
-        int dig = n%10;
-        if(dig == 0) c = c+1;
+      
+        if(n%10 == 0) c++;
         return helper(n/10, c);
     }
     

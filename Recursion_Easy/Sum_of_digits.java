@@ -25,7 +25,7 @@ public class Sum_of_digits {
         return  (n%10) *(int)(Math.pow(10,(int)(Math.log10(n)))) + rev(n/10);
     }
 
-    // in case wherre we need extra variable , we can create a helper function
+    // in case where we need extra variable , we can create a helper function
     static int rev1(int n){
         int digits = (int)(Math.log10(n));
         return helper(n, digits);
