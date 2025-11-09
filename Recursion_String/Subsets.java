@@ -24,8 +24,8 @@ public class Subsets {
 
             return list;
         }
-    ArrayList<String> left = subsets2(ans + str.charAt(0) , str.substring(1));
-      ArrayList<String> right =  subsets2( ans , str.substring(1));
+       ArrayList<String> left = subsets2(ans + str.charAt(0) , str.substring(1));
+       ArrayList<String> right =  subsets2( ans , str.substring(1));
       left.addAll(right);
       return left;
     }
