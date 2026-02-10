@@ -27,7 +27,7 @@ public class Pattern {
     // ***
     // **
     // *
-     public static void print_star(int row , int col){
+     public static void print_star2(int row , int col){
         if(row == 0) return;
         
         if(col < row){

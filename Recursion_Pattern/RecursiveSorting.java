@@ -16,10 +16,10 @@ public class RecursiveSorting {
             if(arr[c] >arr[c+1]){
                 swap(arr , c , c+1);
             }
-            sort(arr , r , c+1);
+            // sort(arr , r , c+1);
             
         }else{
-            sort(arr ,--r , 0);
+            // sort(arr ,--r , 0);
         }
     }
     
