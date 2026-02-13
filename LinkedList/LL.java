@@ -104,6 +104,57 @@ public class LL {
     }
 
 
+
+
+
+    // Inserting the Node using recursion
+    public Node insertRecursive(int val , int index){
+        
+        return helper(val, index, head);
+    }
+    public Node helper(int val , int index , Node curr){
+        if(index == 0){
+           return new Node(val , curr);
+        }
+        curr.next =  helper(val, --index, curr.next);
+        return curr;
+    }
+
+
+
+
+
+
+// merge two sorted lists
+public static void merge_list(LL list1 , LL list2){
+    Node f = list1.head;
+    Node s = list2.head;
+    LL list = new LL();
+    while(f != null && s != null){
+        if(f.value < s.value){
+           list.insertLast(f.value);
+           f = f.next;
+        }else{
+            list.insertLast(s.value);
+            s = s.next;
+        }
+    }
+    while(f != null){
+        list.insertLast(f.value);
+        f = f.next;
+    }
+    while(s != null){
+        list.insertLast(s.value);
+        s =  s.next;
+    }
+
+
+    list.display();
+}
+
+
+
+
     private class Node{
         private int value;
         private Node next;
