@@ -1,9 +1,9 @@
 package LinkedList;
 
 public class LL {
-    private Node head;
-    private Node tail;
-    private int size;
+    public Node head;
+    public Node tail;
+    public int size;
     public LL(){
         this.size = 0;
     }
@@ -153,11 +153,34 @@ public static void merge_list(LL list1 , LL list2){
 }
 
 
+// cycle length detection
 
 
-    private class Node{
-        private int value;
-        private Node next;
+ static int cycleLength(LL list){
+        Node slow = list.head;
+        Node fast = list.head;
+        int count = 0;
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            
+            if(fast == slow){
+                 do{
+                    count++;
+                    slow = slow.next;
+                 }while(fast != slow);
+                 return count;
+            }
+        }
+        return 0;
+    }
+
+
+
+
+    public class Node{
+        public int value;
+        public Node next;
 
         public Node(int n){
             this.value = n;

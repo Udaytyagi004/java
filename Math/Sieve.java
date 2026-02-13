@@ -3,8 +3,9 @@ package Math;
 public class Sieve {
     public static void main(String[] args) {
         int n = 40;
-        boolean[] nums = new boolean[n+1];
-        sieve(n, nums);
+        // boolean[] nums = new boolean[n+1];
+        // sieve(n, nums);
+        
         
     }
     public static void sieve(int n , boolean[] arr)
@@ -21,4 +22,16 @@ public class Sieve {
     }
 
 }    
+
+ public static boolean isHappy(int n) {
+        if(n == 1) return true;
+        int num = 0;
+        while(n != 0){
+            int dig = n % 10;
+            num += dig*dig;
+            n /= 10;
+        }
+        return isHappy(num);
+        
+    }
 }   

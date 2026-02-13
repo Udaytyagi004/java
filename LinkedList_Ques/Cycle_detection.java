@@ -24,4 +24,27 @@ public class Cycle_detection {
         return false;
     }
     
+
+     public int cycleLength(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head;
+        int count = 0;
+        boolean first_meet = true;
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(!first_meet){
+                count++;
+            }
+            if(slow == fast && first_meet){
+                first_meet = false;
+                continue;
+                
+            }
+            if(fast == slow){
+                 return count;
+            }
+        }
+        return -1;
+    }
 }
