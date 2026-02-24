@@ -176,7 +176,30 @@ public static void merge_list(LL list1 , LL list2){
     }
 
 
+// reverse a Linked List 
+    
+    public static void reverseList(LL list){
+        Node head = list.head;
+        reverseList(head , list);
+    }
+    public static Node reverseList(Node curr , LL list){
+        if(curr == list.tail){
+            list.head = curr;
+            return curr;
+        }
+        Node node = reverseList(curr.next, list);
+        node.next = curr;
+         
+        curr.next = null;
+        return curr;
+    
+        
 
+    }
+
+
+
+    
 
     public class Node{
         public int value;

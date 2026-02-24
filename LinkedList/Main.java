@@ -45,15 +45,14 @@ public class Main {
       list.insertLast(2);
       list.insertLast(3);
       list.insertLast(4);
-      // list.insertLast(5);
-      // list.insertLast(6);
-      // list.insertLast(7);
+      list.insertLast(5);
+      list.insertLast(6);
+      list.insertLast(7);
       list.insertLast(8);
       list.display();
-      LL.Node n = list.find(4);
-      list.tail.next = list.head;
-      int a = LL.cycleLength(list);
-      System.out.println(a);
+      LL.reverseList(list);
+      list.display();
+      
 
     }
     
